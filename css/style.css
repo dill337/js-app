@@ -1,0 +1,10 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 50px;
+}

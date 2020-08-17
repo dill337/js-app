@@ -1,3 +1,4 @@
+var pokemonRepository = (function () {
 var pokemonList = [
   {
   creatureName: 'Bulbasaur',
@@ -25,7 +26,23 @@ var pokemonList = [
   }
 ];
 
-pokemonList.forEach(function(list)  {
+  function getAll(){
+    return pokemonList;
+  }
+
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  return {
+    getAll: getAll,
+    add: add
+  }
+})();
+
+console.log( pokemonRepository.getAll() );
+
+getAll(pokemonList).forEach(function(list)  {
   document.write('<h2>' + list.creatureName + ' </h2>' + ' Height: ' + list.creatureHeight)
  if (list.creatureHeight >= 3.00) {
   document.write(' (That\'s pretty big)')

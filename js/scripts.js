@@ -24,6 +24,7 @@ var pokemonRepository = (function () {
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function(){
     console.log(pokemon);
+    alert('height:' + ' ' + pokemon.height + ' ' + 'Type: ' + ' ' + pokemon.types);
   });
   }
 

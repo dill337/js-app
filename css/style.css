@@ -8,3 +8,34 @@ body {
   line-height: 1.4;
   padding: 50px;
 }
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+  position: fixed;
+  right: 10px;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container-is-visible {
+  /* CSS for modal container - add your own desired CSS styles here */
+  display: block;
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 250px;
+  left: 250px;
+  width: 50%;
+  height: 50%;
+  background-color: orange;
+  z-index: 999;
+  overflow: auto;
+  text-align: center;
+}

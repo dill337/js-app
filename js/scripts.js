@@ -25,10 +25,12 @@ var pokemonRepository = (function () {
 
   function showDetails(pokemon) {
      pokemonRepository.loadDetails(pokemon).then(function(){
+
        console.log(pokemon)
        var modal = document.querySelector('#modal-container');
+        modal.setAttribute('id', 'modal-container-is-visible')
        var name = document.createElement('h2');
-       var pname = document.createTextNode(pokemon.name);
+       var pname = document.createTextNode(`This is ${pokemon.name}`);
        name.appendChild(pname);
        modal.appendChild(name);
        var closeButtonElement = document.createElement('button');
@@ -37,16 +39,18 @@ var pokemonRepository = (function () {
       modal.appendChild(closeButtonElement);
         closeButtonElement.addEventListener('click', hideModal);
        var heightP = document.createElement('p');
-       var height = document.createTextNode(`Height: ${pokemon.height}`);
+       var height = document.createTextNode(`Height: ${pokemon.height} meters`);
        heightP.appendChild(height)
        modal.appendChild(heightP);
-       console.log(pokemon.types)
+       var weight = document.createElement('p');
+       var weightP = document.createTextNode(`Weight: ${pokemon.weight} lbs`);
+       weight.appendChild(weightP);
+       modal.appendChild(weight);
        pokemon.types.forEach((type) => {
          var typeElement = document.createElement('span');
          typeElement.innerText = type.type.name;
          modal.appendChild(typeElement)
        })
-       modal.setAttribute('id', 'modal-container-is-visible')
        var image = document.createElement('img')
        image.src = pokemon.imageUrl
        modal.appendChild(image);
@@ -74,7 +78,7 @@ var pokemonRepository = (function () {
       var listItem = document.createElement('li');
       var button = document.createElement('button');
       button.innerText = pokemon.name;
-      button.classList.add('.button_color');
+      button.classList.add('button_color');
       listItem.appendChild(button);
       poke.appendChild(listItem);
       button.addEventListener('click', function (event) {
@@ -109,6 +113,7 @@ var pokemonRepository = (function () {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+      item.weight = details.weight;
     }).catch(function(error){
       console.error(error);
     });

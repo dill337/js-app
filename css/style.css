@@ -10,6 +10,10 @@ body {
   background-color: blue;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .button_color {
   background-color: yellow;
   color: red;

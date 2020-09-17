@@ -73,7 +73,7 @@ if (e.key === 'Escape' && modalContainer) {
    function addListItem(pokemon) {
       var poke = $('.pokemon_list');
       var listItem = $('<li></li>');
-      var button = $(`<button type="button" class="btn btn-primary" data-toggle="modal"
+      var button = $(`<button type="button" class="btn btn-primary pokemonHover" data-toggle="modal"
       data-target="#pokemonModal">${pokemon.name}</button>`);
       $(listItem).append(button);
       $(poke).append(listItem);

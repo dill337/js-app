@@ -10,6 +10,11 @@ h1 {
   color: green;
 }
 
+.pokemonHover:hover {
+  background-color: blue;
+  border-width: 0;
+}
+
 body {
   font-family: 'Ranchers', cursive;
   font-size: 16px;

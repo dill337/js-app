@@ -18,7 +18,7 @@ body {
   background-color: blue;
 }
 
-ul {
+.pokemon_list {
   font-family: 'Grandstander', cursive;
   list-style-type: none;
   display: flex;
